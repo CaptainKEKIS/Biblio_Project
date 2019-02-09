@@ -24,5 +24,20 @@ namespace Biblio_Project
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                Reader reader1 = new Reader { FirstName = "Vasya", LastName = "Pupkin" };
+
+                db.Readers.Add(reader1);
+                db.SaveChanges();
+
+                var Readers = db.Readers.ToList();
+                lbReadersFirstName.ItemsSource = Readers;
+                lbReadersLastName.ItemsSource = Readers;
+            }
+        }
     }
 }

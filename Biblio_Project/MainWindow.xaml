@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Click="Button_Click" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">GO</Button>
+        <ListBox Grid.Row="1" Grid.Column="0" x:Name="lbReadersFirstName" DisplayMemberPath="FullName"/>
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="lbReadersLastName" DisplayMemberPath="LastName"/>
+        <TextBox Grid.Row="0" Grid.Column="0" x:Name="TBFirstName"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="TBLastName"></TextBox>
     </Grid>
 </Window>
